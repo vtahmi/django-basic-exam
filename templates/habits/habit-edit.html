@@ -1,0 +1,9 @@
+<h1>Edit Habit</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Save</button>
+</form>
+
+<a href="{% url 'habit-list' %}">Back</a>

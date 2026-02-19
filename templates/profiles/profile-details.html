@@ -1,0 +1,15 @@
+<h1>Profile</h1>
+
+<p><strong>Name:</strong> {{ profile.name }}</p>
+
+{% if profile.bio %}
+    <p><strong>Bio:</strong> {{ profile.bio }}</p>
+{% endif %}
+
+<p><strong>Created at:</strong> {{ profile.created_at }}</p>
+
+<hr>
+
+<a href="{% url 'home' %}">View my skills</a>
+
+

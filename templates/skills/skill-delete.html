@@ -1,0 +1,9 @@
+<h1>Delete Skill</h1>
+
+<p>Are you sure you want to delete <strong>{{ skill.title }}</strong>?</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button>Delete</button>
+    <a href="{% url 'skill-details' skill.pk %}">Cancel</a>
+</form>

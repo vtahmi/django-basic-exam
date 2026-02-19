@@ -1,0 +1,15 @@
+<h1>My Skills</h1>
+
+{% if skills %}
+    <ul>
+        {% for skill in skills %}
+            <li>
+                {{ skill.title }}
+                <a href="{% url 'skill-details' skill.pk %}">View</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>You don’t have any skills yet.</p>
+    <a href="{% url 'skill-create' %}">Add your first skill</a>
+{% endif %}

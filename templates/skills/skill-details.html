@@ -1,0 +1,28 @@
+<h1>{{ skill.title }}</h1>
+
+<p>{{ skill.description }}</p>
+
+<hr>
+
+<h3>Categories</h3>
+<ul>
+    {% for category in skill.categories.all %}
+        <li>{{ category.title }}</li>
+    {% empty %}
+        <li>No categories assigned.</li>
+    {% endfor %}
+</ul>
+
+<hr>
+
+<h3>Habits</h3>
+<ul>
+    {% for habit in skill.habits.all %}
+        <li>{{ habit.name }} ({{ habit.frequency }} times/week)</li>
+    {% empty %}
+        <li>No habits added yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'skill-edit' skill.pk %}">Edit</a>
+<a href="{% url 'skill-delete' skill.pk %}">Delete</a>
+

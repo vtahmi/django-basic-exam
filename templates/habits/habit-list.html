@@ -1,0 +1,16 @@
+<h1>My Habits</h1>
+
+<ul>
+    {% for habit in habits %}
+        <li>
+            {{ habit.name }}
+            – {{ habit.frequency }} times/week
+            (Skill: {{ habit.skill.title }})
+            <a href="{% url 'habit-edit' habit.pk %}">Edit</a>
+            <a href="{% url 'habit-delete' habit.pk %}">Delete</a>
+        </li>
+    {% empty %}
+        <li>No habits yet.</li>
+    {% endfor %}
+</ul>
+

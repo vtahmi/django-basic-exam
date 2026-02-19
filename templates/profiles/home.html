@@ -1,0 +1,16 @@
+<h1>{{ profile.name }}</h1>
+<h2>Professional Skills</h2>
+
+{% if skills %}
+    <ul>
+        {% for skill in skills %}
+            <li>
+                {{ skill.title }}
+                <a href="{% url 'skill-details' skill.pk %}">View</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No skills yet.</p>
+    <a href="{% url 'skill-create' %}">Add your first skill</a>
+{% endif %}
