@@ -1,0 +1,44 @@
+<nav class="navbar">
+    <a href="{% url 'home' %}" class="navbar-brand fw-bold">
+        <i class="bi bi-bullseye me-2"></i>Skill Tracker
+    </a>
+    <ul class="nav-links">
+        <li>
+            <a href="{% url 'home' %}"
+               class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'profile-details' %}"
+               class="{% if request.resolver_match.url_name == 'profile-details' %}active{% endif %}">
+                Profile
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'skill-list' %}"
+               class="{% if request.resolver_match.url_name == 'skill-list' %}active{% endif %}">
+                My Skills
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'habit-list' %}"
+               class="{% if request.resolver_match.url_name == 'habit-list' %}active{% endif %}">
+                My Habits
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'skill-create' %}"
+               class="{% if request.resolver_match.url_name == 'skill-create' %}active{% endif %}">
+                Add Skill
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'habit-create' %}"
+               class="{% if request.resolver_match.url_name == 'habit-create' %}active{% endif %}">
+                Add Habit
+            </a>
+        </li>
+    </ul>
+</nav>
+

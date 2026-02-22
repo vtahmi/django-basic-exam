@@ -1,0 +1,33 @@
+.skill-card {
+    border: 2px solid #dbeafe;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+}
+
+.skill-card .card-title {
+    font-weight: 600;
+}
+
+.skills-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.skill-title,
+.items {
+    color: #d5156e;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.skill-image img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 10px;
+}

@@ -1,15 +1,59 @@
-<h1>Profile</h1>
+{% extends 'common/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
 
-<p><strong>Name:</strong> {{ profile.name }}</p>
+        <div class="text-center">
+            <h1>{{ profile.name }}</h1>
 
-{% if profile.bio %}
-    <p><strong>Bio:</strong> {{ profile.bio }}</p>
-{% endif %}
+            {% if profile.bio %}
+                <h2 class="text-muted mb-4">{{ profile.bio }}</h2>
+            {% endif %}
+        </div>
+        <div class="profile-image text-center">
+            <img src="{% static 'images/student.png' %}"
+                 alt="Skill image"
+                 class="rounded mb-4">
+        </div>
+        <div class="row text-center mb-5">
+            <div class="col-md-6">
+                <div class=" items card p-4 shadow-sm">
+                    <h3>{{ skills.count }}</h3>
+                    <h3>Skills</h3>
+                </div>
+            </div>
 
-<p><strong>Created at:</strong> {{ profile.created_at }}</p>
+            <div class="col-md-6">
+                <div class="items card p-4 shadow-sm">
+                    <h3>{{ habits.count }}</h3>
+                    <h3>Habits</h3>
+                </div>
+            </div>
+        </div>
 
-<hr>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{% url 'skill-list' %}" class="btn btn-outline-primary">
+                View Skills
+            </a>
+            <a href="{% url 'skill-create' %}" class="btn btn-outline-success">
+                Add Skill
+            </a>
+            <a href="{% url 'habit-create' %}" class="btn btn-outline-success">
+                Add Habit
+            </a>
+        </div>
+        <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="{% url 'profile-edit' %}" class="btn btn-outline-warning">
+                Edit Profile
+            </a>
+            <a href="{% url 'profile-delete' %}" class="btn btn-outline-danger">
+                Delete Profile
+            </a>
+        </div>
 
-<a href="{% url 'home' %}">View my skills</a>
+    </div>
+{% endblock %}
+
+
 
 

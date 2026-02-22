@@ -29,8 +29,11 @@ def skill_create(request):
 
 def skill_details(request, pk):
     skill = get_object_or_404(Skill, pk=pk)
+    habits = skill.habits.all()
+
     context = {
-        'skill': skill
+        'skill': skill,
+        'habits': habits,
     }
     return render(request, 'skills/skill-details.html', context)
 
@@ -40,7 +43,7 @@ def skill_edit(request, pk):
         form = SkillForm(request.POST, instance=skill)
         if form.is_valid():
             form.save()
-            return redirect('skill-details', pk=skill.pk)
+            return redirect('skill-list')
     else:
         form = SkillForm(instance=skill)
     context = {

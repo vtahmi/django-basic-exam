@@ -1,12 +1,36 @@
-<h1>Delete Habit</h1>
+{% extends 'common/base.html' %}
 
-<p>
-    Are you sure you want to delete
-    <strong>{{ habit.name }}</strong>?
-</p>
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="form-card text-center">
 
-<form method="POST">
-    {% csrf_token %}
-    <button>Delete</button>
-    <a href="{% url 'habit-list' %}">Cancel</a>
-</form>
+                <h1 class="mb-3">Delete Habit</h1>
+
+                <p class="mb-4">
+                    Are you sure you want to delete
+                    <strong>{{ habit.name }}</strong>?
+                </p>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="d-flex justify-content-center gap-3">
+                        <button type="submit"
+                                class="btn btn-outline-danger">
+                            Delete
+                        </button>
+
+                        <a href="{% url 'habit-list' %}"
+                           class="btn btn-outline-secondary">
+                            Cancel
+                        </a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

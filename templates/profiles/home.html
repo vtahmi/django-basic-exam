@@ -1,16 +1,37 @@
-<h1>{{ profile.name }}</h1>
-<h2>Professional Skills</h2>
+{% extends 'common/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="text-center">
+        <h1 class="fw-bold mb-4">{{ profile.name }}</h1>
+        <div class="profile-image text-center">
+            <img src="{% static 'images/home-image.png' %}"
+                 alt="Skill image"
+                 class="rounded mb-4">
+        </div>
+        <h2 class="fw-bold mb-4">Skills overview</h2>
+    </div>
+    <div class="skills-container">
+        {% if skills %}
+            <ul class="list-group">
+                {% for skill in skills %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="skill-title">{{ skill.title }}</span>
+                        <div>
+                            <a href="{% url 'skill-details' skill.pk %}" class="btn btn-sm btn-outline-primary">
+                                View
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="alert alert-info">
+                No skills added yet.
+            </div>
+            <a href="{% url 'skill-create' %}" class="btn btn-primary">
+                Add your first skill
+            </a>
+        {% endif %}
+    </div>
+{% endblock %}
 
-{% if skills %}
-    <ul>
-        {% for skill in skills %}
-            <li>
-                {{ skill.title }}
-                <a href="{% url 'skill-details' skill.pk %}">View</a>
-            </li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No skills yet.</p>
-    <a href="{% url 'skill-create' %}">Add your first skill</a>
-{% endif %}

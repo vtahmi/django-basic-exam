@@ -1,0 +1,20 @@
+.habit-badge {
+    font-size: 0.85rem;
+}
+
+.habit-card {
+    border: 2px solid #dbeafe;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.habit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+}
+
+.habit-card .card-title {
+    font-weight: 600;
+}
+
+

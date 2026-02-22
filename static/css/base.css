@@ -1,0 +1,90 @@
+body {
+    background-color: #f7f9fd !important;
+    font-family: system-ui, sans-serif;
+}
+
+.btn-outline-success,
+.btn-outline-primary,
+.btn-outline-warning,
+.btn-outline-danger {
+    color: #fff !important;
+}
+
+.btn-outline-success {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+}
+
+.btn-outline-primary {
+    background-color: #0b5ed7 !important;
+    border-color: #0b5ed7 !important;
+}
+
+.btn-outline-warning {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+}
+
+.btn-outline-danger {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+.btn-outline-success:hover,
+.btn-outline-primary:hover,
+.btn-outline-warning:hover,
+.btn-outline-danger:hover {
+    opacity: 0.85;
+}
+
+.btn-outline-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #ffffff;
+}
+
+.btn-outline-secondary:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+form button.btn {
+    width: auto;
+}
+
+.form-card {
+    background-color: #ffffff;
+
+    border: 3px solid #dbeafe;
+    border-radius: 10px;
+
+    padding: 30px;
+    margin-top: 40px;
+
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+}
+
+.app-footer {
+    background-color: #f1f5f9;
+    border-top: 1px solid #dbeafe;
+    padding: 20px 0;
+}
+
+.app-footer p {
+    margin: 0;
+}
+
+.form-label {
+    font-weight: 700;
+    color: #dc3545;
+}
+
+
+.form-text {
+    font-size: 0.75rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+
+

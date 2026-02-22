@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView
 
-from habits.forms import HabitForm
+from habits.forms import HabitForm, HabitEditForm
 from habits.models import Habit
 
 
@@ -20,7 +20,7 @@ def habit_create(request):
 
 def habit_edit(request, pk):
     habit = get_object_or_404(Habit, pk=pk)
-    form = HabitForm(request.POST or None, instance=habit)
+    form = HabitEditForm(request.POST or None, instance=habit)
     if form.is_valid():
         form.save()
         return redirect('habit-list')
@@ -44,3 +44,4 @@ class HabitListView(ListView):
     model = Habit
     template_name = 'habits/habit-list.html'
     context_object_name = 'habits'
+    ordering = '-frequency'

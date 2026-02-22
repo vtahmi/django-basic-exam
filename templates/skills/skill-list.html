@@ -1,15 +1,24 @@
-<h1>My Skills</h1>
+{% extends 'common/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <h1 class="mb-4 text-center">My Skills</h1>
 
-{% if skills %}
-    <ul>
-        {% for skill in skills %}
-            <li>
-                {{ skill.title }}
-                <a href="{% url 'skill-details' skill.pk %}">View</a>
-            </li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>You don’t have any skills yet.</p>
-    <a href="{% url 'skill-create' %}">Add your first skill</a>
-{% endif %}
+        {% if skills %}
+            <div class="row g-4">
+                {% for skill in skills %}
+                    <div class="col-md-6 col-lg-4">
+                        {% include 'partials/skill-card.html' with skill=skill %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center mt-5">
+                <p class="text-muted">You have no skills yet.</p>
+                <a href="{% url 'skill-create' %}" class="btn btn-outline-success">
+                    Add your first skill
+                </a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
