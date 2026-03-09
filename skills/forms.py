@@ -16,19 +16,15 @@ class SkillForm(forms.ModelForm):
                 'class': 'form-control',
                 'rows': 4,
                 'placeholder': 'Describe this skill...'}),
-            'categories': forms.SelectMultiple(attrs={'class': 'form-select'}),
+            'category': forms.Select(attrs={'class': 'form-control'}),
             'image': forms.ClearableFileInput(attrs={'class': 'form-control'}),
         }
 
         labels = {
             'title': 'Skill Title',
             'description': 'Description',
-            'categories': 'Categories',
+            'category': 'Category',
             'image': 'Skill Image',
-        }
-
-        help_texts = {
-            'categories': 'Hold Ctrl to select multiple categories.',
         }
 
         error_messages = {

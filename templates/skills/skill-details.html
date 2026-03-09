@@ -18,17 +18,11 @@
 
 
                     <div class="mb-3">
-                        <label class="form-label fw-bold">Categories</label>
+                        <label class="form-label fw-bold">Category</label>
                         <ul class="list-group">
-                            {% for category in skill.categories.all %}
-                                <li class="list-group-item fw-semibold">
-                                    {{ category.title }}
-                                </li>
-                            {% empty %}
-                                <li class="list-group-item text-muted">
-                                    No categories assigned.
-                                </li>
-                            {% endfor %}
+                            <li class="list-group-item fw-semibold">
+                                {{ skill.get_category_display }}
+                            </li>
                         </ul>
                     </div>
 
