@@ -1,54 +1,37 @@
-\# Skill Tracker
+# Skill Tracker
 
+A Django web application for tracking skills and habits.
 
+## Features
 
-Skill Tracker is a Django web application for tracking skills and habits.
+- Create, edit and delete skills with categories
+- Create, edit and delete habits linked to skills
+- Profile management
+- Responsive design with Bootstrap 5
 
-Users can create skills, assign categories, and manage related habits.
+## Technologies
 
+- Python 3.10+
+- Django 5.x
+- PostgreSQL
+- Bootstrap 5
+- Crispy Forms
 
+## Database Relationships
 
-\## Features
+- **Profile → Skills**: One-to-Many (ForeignKey)
+- **Habit ↔ Skills**: Many-to-Many
 
-\- Create, edit and delete skills
+## Installation
 
-\- Assign categories to skills
+1. Clone the repository
+2. Create and activate virtual environment
+3. Install dependencies: `pip install -r requirements.txt`
+4. Configure PostgreSQL in `skilltrack/settings.py`
+5. Run migrations: `python manage.py migrate`
+6. Start the server: `python manage.py runserver`
+7. Open http://localhost:8000
 
-\- Add, edit and delete habits
-
-\- Profile management
-
-\- Clean and responsive UI (Bootstrap)
-
-
-
-\## Technologies
-
-\- Python
-
-\- Django
-
-\- PostgreSQL
-
-\- HTML, CSS, Bootstrap
-
-
-
-\## Installation
-
-1\. Clone the repository
-
-2\. Create virtual environment
-
-3\. Install dependencies
-
-4\. Run migrations
-
-5\. Start the server
-
-
-
-\## Author
+## Author
 
 Viktor Tahmisyan
-
